@@ -113,3 +113,53 @@ SecureAuth is designed to be modular. Enable or disable features based on your e
 
 **Follow for project updates — more cool features landing soon.**
 
+📁 Final Recommended Structure
+plaintext
+Copy
+Edit
+secureauth/
+├── src/
+│   ├── app.ts              # Express app instance
+│   ├── server.ts           # Server bootstrap
+│   ├── config/             # Config files (env, DB, tokens)
+│   ├── routes/             # All route definitions
+│   ├── controllers/        # Route logic
+│   ├── services/           # Business logic, reusable services
+│   ├── middlewares/        # Custom middlewares (auth, rate-limit)
+│   ├── models/             # Prisma models or DB schemas
+│   ├── utils/              # Helpers (hashing, token gen, etc.)
+│   ├── jobs/               # Cron jobs, background tasks
+│   ├── types/              # Global TypeScript types/interfaces
+│   ├── validators/         # Request validation logic
+│   └── constants/          # App-wide constants/enums
+│
+├── prisma/                 # Prisma schema and migrations
+│
+├── tests/                  # Unit and integration tests
+│
+├── docker-compose.yml      # Docker setup
+├── Dockerfile              # App Dockerfile
+├── .env                    # Environment variables
+├── .env.example            # Template for others
+├── .gitignore
+├── package.json
+├── tsconfig.json           # TypeScript config
+├── nodemon.json            # Nodemon config
+├── README.md
+└── LICENSE
+⚡ Feature Mapping to Structure
+Feature	Where it Lives
+Auth (Login, Signup)	routes/auth.ts, controllers/authController.ts
+Password Hashing (bcrypt/argon2)	utils/password.ts
+JWT, Sessions	utils/jwt.ts, middlewares/authMiddleware.ts
+RBAC	middlewares/requireRole.ts, services/rbac.ts
+Teams & Invites	routes/team.ts, services/teamService.ts
+2FA	services/2faService.ts, controllers/2fa.ts
+Social Login	services/oauthService.ts
+API Keys	routes/apiKey.ts, services/apiKeyService.ts
+Audit Logs	services/auditLogService.ts
+Geo-Alerts, IP Whitelisting	middlewares/securityGuards.ts
+GDPR Tools	routes/privacy.ts, services/privacyService.ts
+SSO/SCIM (Future)	services/ssoService.ts, services/scim.ts
+Feature Flags	config/featureFlags.ts
+API Docs	routes/docs.ts (Swagger setup)

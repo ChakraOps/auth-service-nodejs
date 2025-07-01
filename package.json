@@ -1,0 +1,43 @@
+{
+  "name": "auth-service-nodejs",
+  "version": "1.0.0",
+  "description": "Scalable, Secure, Full-Stack Authentication System",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChakraOps/auth-service-nodejs.git"
+  },
+  "keywords": [
+    "nodejs",
+    "express",
+    "dotenv",
+    "auth",
+    "boilerplate"
+  ],
+  "author": "Chakra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChakraOps/auth-service-nodejs/issues"
+  },
+  "homepage": "https://github.com/ChakraOps/auth-service-nodejs#readme",
+  "dependencies": {
+    "@prisma/client": "^6.11.0",
+    "bcrypt": "^6.0.0",
+    "dotenv": "^17.0.1",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.30.0",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "prisma": "^6.11.0"
+  }
+}
